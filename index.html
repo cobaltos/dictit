@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <meta name="author" content="Ivan Castro">
+      <title>Appnalytica - DicIt</title>
+      
+      <link rel="shortcut icon" href="assets/img/favicon/favicon.ico" type="image/x-icon">
+
+      <link href="https://fonts.googleapis.com/css?family=Cantarell&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="assets/css/normalize.css">
+      <!-- Main Quill library -->
+      <script src="assets/js/quill.js"></script>
+      <script src="assets/js/quillwc.js"></script>
+
+
+      <!-- Theme included stylesheets -->
+      <link href="assets/css/quill.snow.css" rel="stylesheet">
+      <link href="assets/css/quill.bubble.css" rel="stylesheet">
+      
+      <link rel="stylesheet" href="assets/css/live.switch.css">
+
+      <link rel="stylesheet" href="assets/css/animate.css">
+
+      <link rel="stylesheet" href="assets/css/app.css">
+      
+
+
+   </head>
+   <body>
+      <div style="width: 100%; height: 25px; line-height: 25px; text-align: center; vertical-align: middle; color: white; background-color: blue">
+         <a style="color: white" href="https://github.com/cobaltos/dictit">source code</a> - <a style="color: white" href="https://github.com/cobaltos/dictit/blob/master/LICENSE">licensed under MIT license</a>
+      </div>
+         <div id="about-modal" class="noselect modal-hidden">
+            <div id="about-window" class="noselect">
+               <div id="about-header" class="noselect">
+                  
+                  <div id="company-logo" ><img style="margin: 0 auto;" src="assets/img/appnalytica.svg" class="noselect" height="70"></div>
+                  <div id="product-name" class="noselect">Dictation</div>
+                  <div id="product-version" class="noselect">v1.0</div>
+               </div>
+
+               <div id="about-copyright" class="noselect">Appnalytica Dictation ©Appnalytica 2018ftoday-2020</div>
+
+               <div id="about-copyright-content" class="noselect">Appnalytica and Appnalytica Dictation are trademarks of Appnalytica in Costa Rica and other countries, to see the full list please refer to the readme file or at: https://www.Appnalytica.com/dictation_app
+                  <br />
+                     This software is licensed for personal use only according to the terms and conditions included in the license statement included with the software, copy, modification, resell, distribution, reverse engineering or other forms of modification or distrbution are forbbiden without written consent of Appnalytica.
+               </div>
+
+               <div id="product-registerer" class="noselect">Registered to: Github_Repo</div>
+
+               <div id="product-id" class="noselect">Product ID: APPNGTHBRPO</div>
+
+               <hr />
+               <div id="about-ok-button" class="noselect">
+                  <p class="noselect">Okay</p>
+               </div>
+            </div>
+         </div>
+
+      <div id="main-container">
+      <div id="main-toolbar" class="noselect"><!--main toolbar-->
+         <div id="file-toolbar" class="noselect">
+            <div class="first-file-button toolbar-button noselect"  id="new-recognition">
+               <img  class="noselect" src="assets/img/new_icon.png" width="31" height="34" style="margin-top: 10px; margin-left: 15px;">
+            </div>
+
+            <div class="toolbar-button noselect" id="save-recognition">
+               <img  class="noselect" src="assets/img/save_icon.png" width="35" height="37" style="margin-top: 8px; margin-left: 13px;">
+            </div>
+
+            <div class="last-file-button toolbar-button noselect">
+               <img  class="noselect" src="assets/img/open_icon.png" width="31" height="27" style="margin-top: 13px; margin-left: 15px;">
+            </div>
+            
+            <!--recognition button-->
+            <div id="recognize-button" class="noselect">
+               <p id="rec-button-text" class="noselect">
+                  <img  class="noselect" src="assets/img/rec_icon.png" id="recogition-status-icon" width="29" height="29">
+               </p>
+            </div>
+            <!--end of recogition button-->
+            <div id="mode-switch">
+                  <input type="checkbox" id="id-name--1" name="recognition-type" value="interim" class="switch-input" >
+	               <label for="id-name--1" class="switch-label">Live Mode <span class="toggle--on">On</span><span class="toggle--off">Off</span></label>
+            </div>
+            <div id="lang-switch">
+               <select class="select-css" id="language">
+                  <option disabled selected>Select Language</option>
+                  <option value="es-CR">Español de Costa Rica</option>
+                  <option value="es-ES">Español de España</option>
+                  <option value="en-US">English US</option>
+                  <option value="en-UK">English UK</option>
+              </select>
+            </div>
+
+
+            <!--profile img-->
+            <div id="logo-img">
+               <img  class="noselect" src="assets/img/appnalytica.svg" title="About Appnalytica DictIt" height="50">
+            </div>
+            
+            <!--end of profile img-->
+
+
+         </div>
+         
+
+      </div><!--End of main toolbar-->
+
+     
+         <!-- Create the editor container -->
+         <div id="editor-container">
+            <div id="editor">
+            </div>
+            <div id="status-bar">
+               <div id="todays-date" class="status-info"></div>
+               <div id="word-count" class="status-info"></div>
+               <div id="accuracy-info">
+                  <p class="accuracy-label" id="status-message">Ready to start</p>
+                  <p class="accuracy-label" id="accuracy-percentage"></p>    
+               </div>
+               
+            </div>
+         </div>
+         
+      </div>
+ 
+      
+
+      
+      <!-- Initialize Quill editor -->
+<script>
+
+   var quill = new Quill('#editor', {
+   modules: {
+      'toolbar': [
+            [{ 'font': [] }, { 'size': [] }],
+            [ 'bold', 'italic', 'underline', 'strike' ],
+            [{ 'color': [] }, { 'background': [] }],
+            [{ 'script': 'super' }, { 'script': 'sub' }],
+            ['blockquote', 'code-block' ],
+            [{ 'list': 'ordered' }, { 'list': 'bullet'}, { 'indent': '-1' }, { 'indent': '+1' }],
+            [ 'direction', { 'align': [] }],
+            /*[ 'link', 'image', 'video'],Image and video are not working properly on export*/
+            [ 'clean' ]
+      ],
+      wordCount: {
+                     container: '#counter',
+                     unit: 'word'
+                  }
+   },
+   placeholder: 'Today is a great day to dictate something...isnt it?',
+   theme: 'snow'
+   });
+</script>
+
+<script src="assets/js/app.js"></script>
+<script src="assets/js/Blob.js"></script>
+<script src="assets/js/FileSaver.js"></script>
+<script src="assets/js/save.js"></script>
+   </body>
+</html>

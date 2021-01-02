@@ -1,0 +1,353 @@
+/*Copyright Ivan Castro*/
+
+html, body {
+    height: 100%;
+    margin: 0px;
+    font-family: 'Cantarell', sans-serif;
+    cursor: default;
+}
+
+.noselect {
+-webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+        -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                supported by Chrome and Opera */
+}
+
+#main-container{
+    /*Used calc to include the demo banner for the github repo  */
+    height: calc(100% - 25px);
+}
+#main-toolbar{
+    width: 100%;
+    border-top: 1px solid #DDDDDD;
+    border-bottom: 1px solid #DDDDDD;
+    height: 75px;
+}
+
+#file-toolbar{
+    /*width: 100%;*/
+    height: 65px;
+    margin-top: 3px;
+    margin-left: 5px;
+    padding-left: 5px;
+}
+
+.toolbar-button{
+    width: 60px;
+    height: 55px;
+    background-color: #F2F2F2;
+    border: 1px solid #DFDEDE;
+    margin-top: 0px;
+    float: left;
+    margin-left: -1px;
+}
+
+.first-file-button{
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+
+.last-file-button{
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.toolbar-button:hover{
+    width: 60px;
+    height: 55px;
+    background-color: #E6E6E6;
+    border: 1px solid #DFDEDE;
+    margin-top: 0px;
+    float: left;
+    margin-left: -1px;
+}
+
+.toolbar-button:active{
+    width: 60px;
+    height: 55px;
+    background-color: #DBD6D6;
+    border: 1px solid #DFDEDE;
+    margin-top: 0px;
+    float: left;
+    margin-left: -1px;
+}
+
+#recognize-button{
+    width: 55px;
+    height: 55px;
+    background-color: #F2F2F2;
+    border: 1px solid #DFDEDE;
+    margin: 8px auto;
+    border-radius: 35px;
+    color: #8E8E8E;
+}
+
+#recognize-button:hover{
+    width: 55px;
+    height: 55px;
+    background-color: #E6E6E6;
+    border: 1px solid #DFDEDE;
+    margin: 8px auto;
+    border-radius: 35px;
+}
+
+#recognize-button:active{
+    width: 55px;
+    height: 55px;
+    background-color: #DBD6D6;
+    border: 1px solid #DFDEDE;
+    margin: 8px auto;
+    border-radius: 35px;
+}
+
+#rec-button-text{
+    margin: 15px 10px 10px 25px;
+    font-size: 20px;
+}
+
+#recogition-status-icon{
+   float: right;
+   position: static;
+   margin-top: -3px;
+   margin-right: 3px;
+}
+
+#logo-img{
+    
+    height: 60px;
+    background-color:none;
+    border: 0px solid #DFDEDE;
+    float: right;
+    margin-top: -60px;
+    margin-right: 15px
+}
+
+#mode-switch{
+    width: 55px;
+    height: 55px;
+    background-color:none;
+    border: 0px solid #DFDEDE;
+    float: right;
+    border-radius: 35px;
+    margin-top: -75px;
+    margin-right: 35%;
+}
+
+#lang-switch{
+    width: 55px;
+    height: 55px;
+    background-color:none;
+    border: 0px solid #DFDEDE;
+    border-radius: 35px;
+    margin-top: -55px;
+    margin-left:23%;
+    float: left;
+}
+
+#editor-container{
+    height: calc(100% - 145px);
+    position: relative;
+}
+
+.ql-editor{
+    -webkit-box-shadow: inset 0px 0px 5px 0px rgba(0,0,0,0.5);
+    -moz-box-shadow: inset 0px 0px 5px 0px rgba(0,0,0,0.5);
+    box-shadow: inset 0px 0px 5px 0px rgba(0,0,0,0.5);
+}
+
+#status-bar{
+    height: 25px;
+    background-color: #EEEEEE;
+    width: 100%;
+    font-size: 13px;
+    color: #8E8E8E;
+}
+
+.status-info{
+    width: auto;
+    float:left;
+    margin-top: 5px;
+    margin-left: 5px;
+    padding-right: 5px;
+    border-right: 2px solid #ccc;
+}
+
+#accuracy-info{
+    float:right;
+    margin-top: 5px;
+    margin-right: 5px;
+    padding-right: 5px;
+    border-right: 2px solid #ccc;
+}
+.accuracy-label{
+    margin: 0;
+    padding: 0;
+    display: inline
+}
+#accuracy-percentage{
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.select-css {
+    font-size: 16px;
+    color: #444;
+    line-height: 1.3;
+    padding: .3em 1.4em .3em .8em;
+    width: 220px;
+    min-width: 100px;
+    box-sizing: border-box;
+    margin: 0;
+    border: 1px solid #DFDEDE;
+    box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
+    border-radius: .5em;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #fff;
+    background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25lPSJubyI/PjwhLS0gR2VuZXJhdG9yOiBHcmF2aXQuaW8gLS0+PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiBzdHlsZT0iaXNvbGF0aW9uOmlzb2xhdGUiIHZpZXdCb3g9IjAgMCAyOTIuNCAyOTIuNCIgd2lkdGg9IjI5Mi40IiBoZWlnaHQ9IjI5Mi40Ij48ZGVmcz48Y2xpcFBhdGggaWQ9Il9jbGlwUGF0aF9EWUtFMFppeVRYSkcyRHFtU1I5OFl2Rkp5ZEtrckdidiI+PHJlY3Qgd2lkdGg9IjI5Mi40IiBoZWlnaHQ9IjI5Mi40Ii8+PC9jbGlwUGF0aD48L2RlZnM+PGcgY2xpcC1wYXRoPSJ1cmwoI19jbGlwUGF0aF9EWUtFMFppeVRYSkcyRHFtU1I5OFl2Rkp5ZEtrckdidikiPjxwYXRoIGQ9IiBNIDI4NyA2OS40IEMgMjgzLjYwNyA2NS44NyAyNzguODk2IDYzLjkxMyAyNzQgNjQgTCAxOC40IDY0IEMgMTMuNCA2NCA5LjEgNjUuOCA1LjUgNjkuNCBDIDEuOTg0IDcyLjcyOSAtMC4wMDUgNzcuMzU4IDAgODIuMiBDIDAgODcuMiAxLjggOTEuNSA1LjQgOTUuMSBMIDEzMy40IDIyMyBDIDEzNyAyMjYuNiAxNDEuMiAyMjguNCAxNDYuMiAyMjguNCBDIDE1MS4yIDIyOC40IDE1NS40IDIyNi42IDE1OSAyMjMgTCAyODcgOTUgQyAyOTAuNSA5MS41IDI5Mi40IDg3LjIgMjkyLjQgODIuMiBDIDI5Mi40IDc3LjIgMjkwLjUgNzMgMjg2LjkgNjkuNCBMIDI4NyA2OS40IFogIiBmaWxsPSJyZ2IoMTY2LDE2NiwxNjYpIi8+PC9nPjwvc3ZnPg=='),
+    linear-gradient(to bottom, #F2F2F2 0%,#F2F2F2 100%);
+    background-repeat: no-repeat, repeat;
+    background-position: right .7em top 50%, 0 0;
+    background-size: .65em auto, 100%;
+}
+.select-css::-ms-expand {
+    display: none;
+}
+.select-css:hover {
+    border-color: #DFDEDE;
+}
+.select-css:focus {
+    border-color: #aaa;
+    box-shadow: 0 0 1px 3px #E6E6E6;
+    box-shadow: 0 0 0 3px -moz-mac-focusring;
+    color: #222; 
+    outline: none;
+}
+.select-css option {
+    font-weight:normal;
+}
+
+#about-modal{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(255,255,255,0.85);
+    z-index: 999999;
+    
+}
+
+#about-window{
+    width: 600px;
+    height: 270px;
+    background-color: rgba(255,255,255,1);
+    z-index: 999999;
+    position: fixed;
+    margin-left: calc((100% / 2) - 600px / 2);
+    margin-top: calc(50vh - 300px / 2);
+    -webkit-box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.4);
+    -moz-box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.4);
+    box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.4);
+    padding: 15px;
+    border: 1px solid #2056c4;
+}
+#about-header{
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    color: #8E8E8E;
+    height: 30px;
+}
+
+#company-logo, #product-name, #product-version{
+    float: left;
+}
+
+#company-logo{
+    height: 80px;
+    width: 130px;
+    
+}
+#product-name{
+    font-size: 22px;
+    margin-top: 2px;
+    margin-left: 15px;
+}
+#product-version{
+    font-size: 12px;
+    margin-top: 12px;
+    margin-left: 5px;
+}
+
+#about-copyright{
+    font-size: 12px;
+    color: #8E8E8E;
+    margin: 15px 0;
+    text-align: justify;
+}
+
+#about-copyright-content{
+    font-size: 12px;
+    color: #8E8E8E;
+    margin: 15px 0;
+    line-height: 1.5em;
+}
+
+#product-registerer, #product-id{
+    font-size: 12px;
+    font-weight: bold;
+    color: #000;
+    line-height: 1.5em;
+}
+
+#about-ok-button{
+    border-radius: 15px;
+    float: right;
+    margin-right: 15px;
+    border: 1px solid #2056c4;
+    color: #8E8E8E;
+    width: 100px;
+    height: 28px;
+    margin: 0;
+    padding: 0;
+}
+
+#about-ok-button > p{
+    text-align: center;
+    padding: 0;
+    padding: 5px 0;
+    margin: 0;
+}
+
+#about-ok-button:hover{
+    border-radius: 15px;
+    float: right;
+    margin-right: 15px;
+    background-color: #2056c4;
+    border: 1px solid rgb(4, 0, 255);
+    color: #FFFFFF;
+    width: 100px;
+    height: 28px;
+    margin: 0;
+    padding: 0;
+}
+
+#about-ok-button:active{
+    border-radius: 15px;
+    float: right;
+    margin-right: 15px;
+    background-color: rgb(156, 25, 40);
+    border: 1px solid red;
+    color: #FFFFFF;
+    width: 100px;
+    height: 28px;
+    margin: 0;
+    padding: 0;
+}
+
+.modal-visible{opacity: 1}
+.modal-hidden{display: none}
